@@ -1,15 +1,13 @@
+#include <iostream>
 
 
 int main(int argc, char const *argv[])
 {
-    for (int (size_t i = 0; i < count; i++)
+    std::cout<<"mensaje"<<std::endl;
+    for (int i = 0; i < 10; i++)
     {
         /* code */
     }
-     i = 0; i < count; i++)
-    {
-        /* code */
-    }
-    
+
     return 0;
 }
