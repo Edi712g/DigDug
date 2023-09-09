@@ -1,0 +1,7 @@
+#include <algo>
+preprocesamiento //todos los archivos se convienren en un super archivo y lo pega dodo en ese espacio
+
+#pragma once 
+todo el archivo se copia una vez y se preestablece
+
+

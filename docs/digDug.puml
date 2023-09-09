@@ -1,0 +1,49 @@
+@startuml DigDug
+ 
+class DigDug
+class Personaje
+class Fygars
+class Pookas 
+class Fruta
+class Verdura 
+class Alimento
+class Bomba
+class Roca 
+class Tunel
+class Tierra 
+class Traje
+class Scord 
+class Nivel
+class Interfa
+class Pantalla
+class Pala 
+class Jugador
+
+Jugador "1" o-- "1" DigDug
+Jugador "1" o-- "1" Pantalla
+DigDug "1" -|> "1" Personaje 
+DigDug "1" *-- "1" Pala
+Pala "1" o-- "1" Tierra
+Personaje "1" *-- "1" Traje
+Personaje "1" o-- "1" Scord
+DigDug "1" o-- "1" Alimento
+Nivel "1" *-- "1" Personaje
+Nivel "1" *-- "1" Roca
+DigDug "1" o-- "1" Bomba 
+Personaje "1" o-- "1" Tunel
+DigDug "1" o-- "1-*" Roca
+Fruta "1" -|> "1" Alimento
+Verdura "1" -|> "1" Alimento
+Alimento "1" *-- "1" Scord 
+DigDug "1" o-- "1" Scord
+Interfa "1" *-- "1" Nivel
+Pantalla "1" o-- "1" Interfa
+Pookas "1" -|> "1" Personaje
+Fygars "1" -|> "1" Personaje
+Fygars "*" o-- "1" Tunel
+Pookas "*" o-- "1" Tunel
+Alimento "1" o-- "1" Tunel
+Tunel "1" *-- "1" Tierra
+Bomba "1" o-- "1" Fygars
+Bomba "1" o-- "1" Pookas
+@enduml
