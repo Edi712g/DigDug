@@ -10,16 +10,16 @@ private:
 public:
     Mascota()
     {
-        this-> vida = 100;
+        this->vida = 100;
     }
 
-    void Establecernombre (std::string nombre) 
+    void Establecernombre(std::string nombre)
     {
-        this-> nombre = nombre;
+        this->nombre = nombre;
     }
     ~Mascota() {}
     void DecirNombre()
     {
-        std::cout<<"Mi nombre es: "<< this->nombre << std:: endl;
+        std::cout << "Mi nombre es: " << this->nombre << std::endl;
     }
 };

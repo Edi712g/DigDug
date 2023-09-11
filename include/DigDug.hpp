@@ -2,8 +2,12 @@
 class DigDug
 {
 private:
-    /* data */
+    int scord;
+
 public:
-    DigDug(/* args */) {}
+    DigDug() {}
+    void Inflar()
+    {
+        }
     ~DigDug() {}
 };

@@ -4,4 +4,16 @@ preprocesamiento //todos los archivos se convienren en un super archivo y lo peg
 #pragma once 
 todo el archivo se copia una vez y se preestablece
 
+makefile  eliminar los otros dos que tenga
+archivo costrucctor con sintaxis especiela llamadas recetas que se componene en 3 partes 
+ pocole: ingredientes                   
+    -(en lugar de guin "tab" )instrucciones
+    -
+    -
 
+    objetivo : 
+
+/
+
+    si pones make ejecuta la primera receta 
+    make runNombre segun mayusculas min 
