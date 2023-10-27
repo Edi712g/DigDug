@@ -13,7 +13,7 @@ public:
         this->vida = 100;
     }
 
-    void EstablecerNombre(std::string nombre)
+    void EstablecerNcc ombre(std::string nombre)
     {
         this->nombre = nombre;
     }
