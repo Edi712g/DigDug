@@ -6,7 +6,6 @@
 #include <Fygars.hpp>
 #include <Interfa.hpp>
 #include <Jugador.hpp>
-#include <Mascota.hpp>
 #include <Nivel.hpp>
 #include <Pala.hpp>
 #include <Pantalla.hpp>
@@ -19,17 +18,36 @@
 #include <Tunel.hpp>
 #include <Verdura.hpp>
 
-int main ()
+#include <curses.h>
+#include <string.h>
+#include <iostream>
+#include <unistd.h>
+#include <fstream>
+#include <filesystem>
+
+#include <Ventana.hpp>
+#include <list>
+#include <DigDug.hpp>
+#include <Proyectil.hpp>
+#include <Exit.hpp>
+
+
+using namespace std;
+class Demo
 {
-    std::cout<<"DigDug-Bienvenido "<<std::endl;
+private:
+    int x, y;
+};
+
+int main(int argc, char const *argv[])
+{
+    //std::cout << "DigDug-Bienvenido " << std::endl;
     Alimento a;
     Bomba b;
-    DigDug d;
     Fruta f;
     Fygars fy;
     Interfa i;
     Jugador j;
-    Mascota m;
     Nivel n;
     Pala p;
     Pantalla pa;
@@ -41,6 +59,48 @@ int main ()
     Tunel tu;
     Verdura v;
 
+    DigDug *dig = new DigDug();
+    
+
+    Ventana *ventana = new Ventana();
+
+
+    list<Dibujo *> dibujos;
+    dibujos.push_back(dig);
+    
+
+    list<Actualizable *> actualizables;
+    actualizables.push_back(dig);
+    
+
+    while (!ventana->DeboCerrar())
+    {
+        int key = getch();
+        if (key == 'a' || key == KEY_LEFT)
+        {
+            dig->Avanzar();
+        }
+        if (key == 'd' || key == KEY_RIGHT)
+        {
+            dig->CambiarDireccion();
+        }
+        if (key == 'e'||key==KEY_DOWN)
+        {
+            Exit *e =
+            new Exit(dig->LeerPosicion());
+            dibujos.push_back(e);
+            actualizables.push_back(e);
+        }
+        if (key == ' ')
+        {
+            Proyectil *p =
+                new Proyectil(dig->LeerPosicion());
+            dibujos.push_back(p);
+            actualizables.push_back(p);
+        }
+        ventana->Dibujar(dibujos);
+        ventana->Actualizar(actualizables);
+    }
 
     return 0;
 }
