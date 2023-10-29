@@ -9,8 +9,9 @@ private:
     int tiempoVida;
 
 public:
-    Proyectil(Vector posicion) : Dibujo(posicion.LeerX()+10,
-     posicion.LeerY()+3, "bullet")
+    Proyectil(Vector posicion)
+        : Dibujo(posicion.LeerX() + 10,
+                 posicion.LeerY() + 3, "Bullet")
     {
         this->tiempoVida = 100;
     }

@@ -30,7 +30,7 @@
 #include <DigDug.hpp>
 #include <Proyectil.hpp>
 #include <Exit.hpp>
-
+#include <Fondo.hpp>
 
 using namespace std;
 class Demo
@@ -41,7 +41,7 @@ private:
 
 int main(int argc, char const *argv[])
 {
-    //std::cout << "DigDug-Bienvenido " << std::endl;
+    // std::cout << "DigDug-Bienvenido " << std::endl;
     Alimento a;
     Bomba b;
     Fruta f;
@@ -59,19 +59,17 @@ int main(int argc, char const *argv[])
     Tunel tu;
     Verdura v;
 
+    Fondo *ro = new Fondo();
     DigDug *dig = new DigDug();
-    
 
     Ventana *ventana = new Ventana();
 
-
     list<Dibujo *> dibujos;
+    dibujos.push_back(ro);
     dibujos.push_back(dig);
-    
 
     list<Actualizable *> actualizables;
     actualizables.push_back(dig);
-    
 
     while (!ventana->DeboCerrar())
     {
@@ -84,10 +82,10 @@ int main(int argc, char const *argv[])
         {
             dig->CambiarDireccion();
         }
-        if (key == 'e'||key==KEY_DOWN)
+        if (key == 'e' || key == KEY_DOWN)
         {
             Exit *e =
-            new Exit(dig->LeerPosicion());
+                new Exit(dig->LeerPosicion());
             dibujos.push_back(e);
             actualizables.push_back(e);
         }

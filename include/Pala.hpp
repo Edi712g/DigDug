@@ -7,6 +7,6 @@ public:
     Pala(/* args */) {}
     void Cavar()
     {
-        }
+    }
     ~Pala() {}
 };

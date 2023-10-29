@@ -1,5 +1,5 @@
 #pragma once
- class Roca
+class Roca
 {
 private:
     /* data */

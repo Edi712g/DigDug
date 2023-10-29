@@ -16,6 +16,7 @@ private:
 
 protected:
     Vector posicion;
+
 public:
     Dibujo(int x, int y, string recurso)
     {
@@ -36,8 +37,7 @@ public:
 
             move(
                 this->posicion.LeerY(),
-                this->posicion.LeerX()
-                );
+                this->posicion.LeerX());
 
             while (std::getline(archivo, line))
             {
