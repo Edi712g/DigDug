@@ -60,6 +60,7 @@ int main(int argc, char const *argv[])
     Verdura v;
 
     Fondo *ro = new Fondo();
+    
     DigDug *dig = new DigDug();
 
     Ventana *ventana = new Ventana();
